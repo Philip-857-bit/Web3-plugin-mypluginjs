@@ -49,30 +49,34 @@ getContractBalance(address)
 
 Returns the balance (in wei) of a contract at a given address.
 
-```const balance = await plugin.getContractBalance('0xYourContractAddress');
+```js 
+const balance = await plugin.getContractBalance('0xYourContractAddress');
 ```
 
 listenToEvent(contractAddress, abi, eventName, callback)
 
 Subscribes to a contract event and triggers callback when the event is emitted.
 
-```js plugin.listenToEvent('0xYourContractAddress', abi, 'MyEvent', (event) => {
+```js
+plugin.listenToEvent('0xYourContractAddress', abi, 'MyEvent', (event) => {
     console.log('Event received:', event);
 });
 ```
-
 estimateGas(contractAddress, abi, methodName, args, from)
 
 Estimates gas required to call a contract method.
 
-```js const gas = await plugin.estimateGas('0xYourContractAddress', abi, 'myMethod', [arg1, arg2], '0xYourAddress');
+```js 
+const gas = await plugin.estimateGas('0xYourContractAddress', abi, 'myMethod', [arg1, arg2], '0xYourAddress');
 ```
+
 
 readVariable(contractAddress, abi, variableName)
 
 Reads a public variable from a contract.
 
-```js const value = await plugin.readVariable('0xYourContractAddress', abi, 'myPublicVariable');
+```js
+const value = await plugin.readVariable('0xYourContractAddress', abi, 'myPublicVariable');
 ```
 
 
@@ -80,35 +84,40 @@ sendEther(from, to, value)
 
 Sends Ether from one address to another.
 
-```js await plugin.sendEther('0xFromAddress', '0xToAddress', web3.utils.toWei('0.1', 'ether'));
+```js
+await plugin.sendEther('0xFromAddress', '0xToAddress', web3.utils.toWei('0.1', 'ether'));
 ```
 
 getLatestBlockNumber()
 
 Gets the number of the latest block.
 
-```js const blockNumber = await plugin.getLatestBlockNumber();
+```js
+const blockNumber = await plugin.getLatestBlockNumber();
 ```
 
 getTransaction(txHash)
 
 Fetches details of a transaction by its hash.
 
-```js const txDetails = await plugin.getTransaction('0xYourTransactionHash');
+```js
+const txDetails = await plugin.getTransaction('0xYourTransactionHash');
 ```
 
 callMethod(contractAddress, abi, methodName, args = [])
 
 Calls a read-only contract method.
 
-```js const result = await plugin.callMethod('0xYourContractAddress', abi, 'myMethod', [arg1, arg2]);
+```js
+const result = await plugin.callMethod('0xYourContractAddress', abi, 'myMethod', [arg1, arg2]);
 ```
 
 sendMethod(contractAddress, abi, methodName, args = [], from)
 
 Sends a transaction to a contract method.
 
-```js await plugin.sendMethod('0xYourContractAddress', abi, 'myMethod', [arg1, arg2], '0xYourAddress');
+```js
+await plugin.sendMethod('0xYourContractAddress', abi, 'myMethod', [arg1, arg2], '0xYourAddress');
 ```
 
 
